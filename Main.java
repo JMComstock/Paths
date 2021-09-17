@@ -13,9 +13,10 @@ public class Main {
         Path path = FileSystems.getDefault().getPath("WorkingDirectoryFile.txt");
         printFile(path);
 
+        // Path within the working directory in a subdirectory names files.
         Path filePath = FileSystems.getDefault().getPath("files","SubdirectoryFile.txt");
         printFile(filePath);
-
+        // Absolute path to OutThere.txt which is outside of the Paths directory altogether.
         filePath = Paths.get("C:\\Users\\jmcom\\Desktop\\java\\OutThere.txt");
         printFile(filePath);
     }
