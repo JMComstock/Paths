@@ -17,7 +17,7 @@ public class Main {
         Path filePath = FileSystems.getDefault().getPath("files","SubdirectoryFile.txt");
         printFile(filePath);
         // Absolute path to OutThere.txt which is outside of the Paths directory altogether.
-        filePath = Paths.get("C:\\Users\\jmcom\\Desktop\\java\\OutThere.txt");
+        filePath = Paths.get("C:\\*****\\****\\Desktop\\java\\OutThere.txt");  // replace the **** with the directories in your absolute path
         printFile(filePath);
     }
 
