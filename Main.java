@@ -13,12 +13,21 @@ public class Main {
         Path path = FileSystems.getDefault().getPath("WorkingDirectoryFile.txt");
         printFile(path);
 
-        // Path within the working directory in a subdirectory names files.
-        Path filePath = FileSystems.getDefault().getPath("files","SubdirectoryFile.txt");
+//        Path filePath = FileSystems.getDefault().getPath("files","SubdirectoryFile.txt");
+        Path filePath = Paths.get(".","files","SubdirectoryFile.txt");
         printFile(filePath);
-        // Absolute path to OutThere.txt which is outside of the Paths directory altogether.
-        filePath = Paths.get("C:\\*****\\****\\Desktop\\java\\OutThere.txt");  // replace the **** with the directories in your absolute path
+
+//        filePath = Paths.get("C:\\Users\\jmcom\\Desktop\\java\\OutThere.txt");  // this will work or the code on line 21
+        filePath = Paths.get("C:\\","Users\\", "jmcom\\", "Desktop\\", "java\\", "OutThere.txt");
         printFile(filePath);
+
+        filePath = Paths.get(".");
+        System.out.println(filePath.toAbsolutePath());
+
+        Path path2 = FileSystems.getDefault().getPath(".", "files", "..", "files", "SubdirectoryFile.txt");
+        System.out.println(path2.normalize().toAbsolutePath());
+        printFile(path2.normalize());
+        
     }
 
     private static void printFile(Path path) {
